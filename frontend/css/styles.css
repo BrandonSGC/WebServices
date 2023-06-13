@@ -1,0 +1,243 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+
+/* Variables */
+:root {
+    --oscuro: #222831;
+    --gris: #393E46;
+    --turquesa: #00ADB5;
+    --grisClaro: #EEEEEE;
+    --blanco: #FFFFFF;
+    --azul: #215AA8;
+    --azul_oscuro: #163f78;
+}
+
+/* Globales */
+html { /* Box Model */
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.6rem;
+    background-color: var(--oscuro);
+    font-family: 'Raleway', sans-serif;
+}
+h1 {
+    font-size: 4.2rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.8rem;
+}
+img {
+    max-width: 100%;
+    display: block;    
+}
+a {
+    text-decoration: none;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+fieldset {
+    border: none;
+}
+label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+/* Utilidades */
+[class$="__contenedor"] {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+@media (min-width: 768px) {
+    [class$="__contenedor"] {
+        width: 90%;
+}
+}
+[class$="__heading"] {
+    text-align: center;
+}
+
+
+/* HEADER */
+.header {
+    background-color: var(--);
+    padding: 3rem 0;
+}
+.header__logo {
+    margin: 0 auto;
+}
+.navegacion {
+    padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+    .header__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }    
+    .header__logo {
+        width: 15rem;        
+    }
+    .navegacion {
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.navegacion__enlace {
+    display: block;
+    text-align: center;
+    padding: 1rem 3rem;
+    color: var(--azul);
+    font-size: 2rem;
+}
+
+.navegacion__enlace:hover {
+    background-color: var(--azul);
+    color: var(--grisClaro);
+    transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .navegacion__enlace--activo {
+        background-color: var(--turquesa);
+        color: #EEEEEE;
+    }
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--blanco);
+    margin-top: 5rem;
+}
+
+.footer__texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer__texto h3 {
+    color: var(--azul);
+}
+
+@media (min-width: 768px) {
+    .footer__texto {
+        padding-bottom: 5rem;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+}
+
+.footer__logo {
+    margin: 1rem auto;
+    height: 11rem;
+}
+.footer_cuc {
+    color: var(--azul);
+    font-weight: 700;
+}
+.footer__organizacion,
+.footer__estudiantes {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.footer__organizacion h3{
+    margin-bottom: 0;
+}
+
+.footer__estudiantes li {
+    margin-bottom: 2rem;
+}
+
+.name__flex {
+    display: flex;
+    align-items: center;
+}
+.owner {
+    font-size: 2.7rem;
+    color:var(--azul_oscuro);
+    margin: 0;
+}
+.owner span {
+    color: red;
+}
+.star {
+    width: 2rem;
+    height: auto;
+    margin-right: 2rem;
+}
+
+
+
+/* Acerca De */
+.acercaDe__display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.acercaDe__texto {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.acercaDe__parrafo {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: var(--azul_oscuro);
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .acercaDe__parrafo {
+        width: 60%;
+        margin: 0 auto;
+        font-size: 2rem;
+        padding: 1rem 0;
+        background-color: var(--azul_oscuro);
+        border-radius: 1rem;
+    }
+}
+
+.acercaDe__logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--grisClaro);
+    padding: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.acercaDe__logo {
+    width: 10rem;
+    height: auto;    
+}
