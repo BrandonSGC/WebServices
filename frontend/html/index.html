@@ -55,7 +55,7 @@
                 <form action="" method="" class="crearCliente__formulario">
                     <fieldset>
                         <label for="cedula" class="">Cedula:</label>
-                        <input class="crearCliente__input" type="number" name="cedula" id="cedula" placeholder="Ejemplo: 111111111">
+                        <input class="crearCliente__input" type="number" name="cedula" id="cedula" oninput="formatCedula(this)">
                         
                         <label for="nombre" class="">Nombre:</label>
                         <input class="crearCliente__input" type="text" name="nombre" id="nombre">
@@ -65,6 +65,7 @@
                         
                         <label for="segundoApellido" class="">Segundo Apellido:</label>
                         <input class="crearCliente__input" type="text" name="segundoApellido" id="segundoApellido">
+                        <script src="../js/crearCliente.js"></script>
                     </fieldset>
 
                     <fieldset>                        
@@ -83,9 +84,7 @@
                         
                         <label for="estado" class="">Estado:</label>
                         <select class="crearCliente__input" name="estado" id="estado">
-                            <option value="">-- Seleccionar Estado --</option>
                             <option value="0">Inactivo</option>
-                            <option value="1">Activo</option>
                         </select>
                     </fieldset>                    
                 </form>
@@ -99,15 +98,57 @@
     <section class="tablaClientes">
         <div class="tablaClientes__contenedor">
             <div class="tablaClientes">
-                <h1>Tabla Clientes</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Quia corporis facilis deleniti expedita ipsam delectus quidem
-                    est. Dolore, ut eveniet pariatur quod voluptate placeat aut
-                    corporis similique expedita numquam assumenda.
-                </p>
-                <button>algo</button>
-                <button>algo</button>
-                <button>algo</button>
+                <h1 class="tablaClientes__heading">Tabla Clientes</h1>
+                
+                <!-- Se define una tabla con la etiqueta table. -->
+                <table class="tabla">
+                    <!-- thead es para poner el titulo de los datos -->
+                    <thead class="tabla__header">
+                        <!-- tr es para crear una fila -->
+                        <tr class="tabla__fila">
+                            <!-- th es una celda para los titulos de los datos -->
+                            <th class="tabla__columna">Cédula</th>
+                            <th class="tabla__columna">Nombre Completo</th>
+                            <th class="tabla__columna">Télefono</th>
+                            <th class="tabla__columna">Email
+                            <th class="tabla__columna">Sexo</th>
+                            <th class="tabla__columna">Estado</th>           
+                        </tr>
+                    </thead>
+                    <!-- tbody es donde vamos a poner los datos -->
+                    <tbody class="tabla__datos">
+                        <!-- tr para crear una tabla -->
+                        <tr class="tabla__fila">
+                            <!-- td una celda de datos -->
+                            <td data-label="Cédula:" class="tabla__dato">117970823</td>
+                            <td data-label="Nombre Completo:" class="tabla__dato">Brandon Gomez Carvajal</td>
+                            <td data-label="Télefono:" class="tabla__dato">7428451</td>
+                            <td data-label="Email:" class="tabla__dato">bransti20@gmail.com</td>
+                            <td data-label="Sexo:" class="tabla__dato">Masculino</td>
+                            <td data-label="Estado:" class="tabla__dato">Inactivo</td>
+                        </tr>
+
+                        <tr class="tabla__fila">
+                            <!-- td una celda de datos -->
+                            <td data-label="Cédula:" class="tabla__dato">117970823</td>
+                            <td data-label="Nombre Completo:" class="tabla__dato">Brandon Gomez Carvajal</td>
+                            <td data-label="Télefono:" class="tabla__dato">7428451</td>
+                            <td data-label="Email:" class="tabla__dato">bransti20@gmail.com</td>
+                            <td data-label="Sexo:" class="tabla__dato">Masculino</td>
+                            <td data-label="Estado:" class="tabla__dato">Inactivo</td>
+                        </tr>
+
+                        <tr class="tabla__fila">
+                            <!-- td una celda de datos -->
+                            <td data-label="Cédula:" class="tabla__dato">117970823</td>
+                            <td data-label="Nombre Completo:" class="tabla__dato">Brandon Gomez Carvajal</td>
+                            <td data-label="Télefono:" class="tabla__dato">7428451</td>
+                            <td data-label="Email:" class="tabla__dato">bransti20@gmail.com</td>
+                            <td data-label="Sexo:" class="tabla__dato">Masculino</td>
+                            <td data-label="Estado:" class="tabla__dato">Inactivo</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -115,7 +156,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <h2 class="main__heading">Proyecto - Arquitectura de Sistemas Operativos</h2>
+        <h2 class="footer__heading">Proyecto - Arquitectura de Sistemas Operativos</h2>
         <div class="footer__contenedor">
             <div class="footer__texto">
                 <div class="footer__organizacion">
@@ -127,12 +168,7 @@
                 </div>
                 <div class="footer__estudiantes">
                     <h3>Estudiantes:</h3>
-                    <ul>
-                        <li class="name__flex">
-                            <img class="star" src="../img/star.png" alt="">
-                            <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
-                        </li>
-                    </ul>
+                    <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>                
                 </div>
             </div>            
         </div>
