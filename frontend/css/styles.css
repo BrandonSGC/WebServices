@@ -3,13 +3,10 @@
 
 /* Variables */
 :root {
-    --oscuro: #222831;
-    --gris: #393E46;
-    --turquesa: #00ADB5;
-    --grisClaro: #EEEEEE;
+    --oscuro: #272343;
     --blanco: #FFFFFF;
-    --azul: #215AA8;
-    --azul_oscuro: #163f78;
+    --claro: #E3F6F5;
+    --menosClaro: #BAE8E8;
 }
 
 /* Globales */
@@ -21,7 +18,7 @@ html { /* Box Model */
     box-sizing: inherit;
 }
 body {
-    font-size: 1.6rem;
+    font-size: 1.6rem;    
     background-color: var(--oscuro);
     font-family: 'Raleway', sans-serif;
 }
@@ -49,6 +46,7 @@ li {
 }
 fieldset {
     border: none;
+    padding: 0;
 }
 label {
     display: block;
@@ -72,13 +70,13 @@ label {
 
 
 /* HEADER */
-.header {
-    background-color: var(--);
+.header {    
     padding: 3rem 0;
 }
-.header__logo {
-    margin: 0 auto;
+.header__heading {
+    color: var(--menosClaro);
 }
+
 .navegacion {
     padding-top: 2rem;
 }
@@ -107,29 +105,136 @@ label {
     display: block;
     text-align: center;
     padding: 1rem 3rem;
-    color: var(--azul);
+    color: var(--menosClaro);
     font-size: 2rem;
 }
 
 .navegacion__enlace:hover {
-    background-color: var(--azul);
-    color: var(--grisClaro);
+    background-color: var(--menosClaro);
+    border-radius: .6rem;
+    color: var(--oscuro);
     transition: .3s;
 }
 
 @media (min-width: 768px) {
     .navegacion__enlace--activo {
-        background-color: var(--turquesa);
-        color: #EEEEEE;
+        background-color: var(--claro);
+        color: var(--oscuro);
+        border-radius: .6rem;
     }
 }
+
+
+/* MAIN */
+.main__heading {
+    color: var(--blanco);
+}
+
+.main__tecnologias {
+    color: var(--menosClaro);
+}
+.main__display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.main__texto {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.main__logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.main__logo {
+    width: 5rem;
+    height: auto;    
+}
+
+
+
+
+/* SECTION - Crear Clientes */
+
+.crearCliente {
+    background-color: var(--blanco);
+    margin: 5rem 0 0 0;
+    padding: 3rem 0;
+}
+.crearCliente__display {
+    background-color: var(--menosClaro);
+    border-radius: 1rem;
+    padding: 3rem;
+}
+.crearCliente__heading {
+    color: var(--oscuro);
+}
+
+
+@media (min-width: 560px) {
+    .crearCliente__formulario {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}
+
+.crearCliente__input {
+    width: 100%;
+    background-color: var(--blanco);
+    border: none;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.crearCliente__boton {
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+@media (min-width: 560px) {
+    .crearCliente__boton {
+        padding: 1.6rem 3rem;
+        width: 30rem;
+    }
+}
+.crearCliente__boton:hover {
+    background-color: #1a172c;
+    color: var(--claro);
+    transition: .3s;
+}
+
+
+/* SECTION - Tabla  Clientes */
+
+.tablaClientes {
+    margin: 3rem 0;
+}
+
+
 
 
 /* FOOTER */
 
 .footer {
-    background-color: var(--blanco);
-    margin-top: 5rem;
+    background-color: var(--menosClaro);    
+    padding: 3rem;
 }
 
 .footer__texto {
@@ -190,54 +295,4 @@ label {
     width: 2rem;
     height: auto;
     margin-right: 2rem;
-}
-
-
-
-/* Acerca De */
-.acercaDe__display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-}
-
-.acercaDe__texto {
-    color: var(--blanco);
-    text-align: center;
-}
-
-.acercaDe__parrafo {
-    width: 60%;
-    margin: 0 auto;
-    font-size: 2rem;
-    padding: 1rem;
-    background-color: var(--azul_oscuro);
-    border-radius: 1rem;
-}
-
-@media (min-width: 768px) {
-    .acercaDe__parrafo {
-        width: 60%;
-        margin: 0 auto;
-        font-size: 2rem;
-        padding: 1rem 0;
-        background-color: var(--azul_oscuro);
-        border-radius: 1rem;
-    }
-}
-
-.acercaDe__logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    background-color: var(--grisClaro);
-    padding: 2rem;
-    border-radius: 2rem;
-    overflow: hidden;
-}
-
-.acercaDe__logo {
-    width: 10rem;
-    height: auto;    
 }

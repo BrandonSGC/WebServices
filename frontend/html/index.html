@@ -7,51 +7,115 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
-    <title>SinpeMóvil - Inicio</title>
+    <title>Proyecto - WebServices</title>
 </head>
 <body>
     <!-- HEADER -->
     <header class="header">
         <div class="header__contenedor">
-            <div class="header__flex">
-                <div class="header__imagen">
-                    <img class="header__logo" src="../img/SinpeMovilLogo.png" alt="" class="logo">
-                </div>
+            <div class="header__flex">                
+                <h1 class="header__heading">WebServices</h1>
                 <nav class="navegacion">
                     <a href="./index.html" class="navegacion__enlace">Inicio</a>
-                    <a href="./miCuenta.html" class="navegacion__enlace">Cliente</a>                    
-                    <a href="./acercaDe.html" class="navegacion__enlace navegacion__enlace--activo">Acerca de</a>
+                    <a href="" class="navegacion__enlace ">Crear Cliente</a>
+                    <a href="" class="navegacion__enlace navegacion__enlace--activo">Ver Clientes</a>
                 </nav>
             </div>            
         </div>
     </header>
 
     <!-- MAIN -->
-    <main class="acercaDe">
-        <div class="acercaDe__contenedor">
-            <div class="acercaDe__display">
-                <div class="acercaDe__texto">
-                    <h1 class="acercaDe__heading">Proyecto - Arquitectura de Sistemas Operativos</h1>
-                    <p class="acercaDe__parrafo">Proyecto realizado por: <span>Brandon Gomez Carvajal</span></p>
-                    <h2 class="acercaDe__tecnologias">Tecnologías usadas:</h2>
+    <main class="main">
+        <div class="main__contenedor">
+            <div class="main__display">
+                <div class="main__texto">                    
+                    <h2 class="main__tecnologias">Tecnologías usadas:</h2>
                 </div>
                 
-                <div class="acercaDe__logos">               
-                    <img class="acercaDe__logo" src="../img/html.png" alt="HTML">
-                    <img class="acercaDe__logo" src="../img/css.png" alt="CSS">
-                    <img class="acercaDe__logo" src="../img/javascript.png" alt="Javascript">
-                    <img class="acercaDe__logo" src="../img/github.ico" alt="Github">
-                    <img class="acercaDe__logo" src="../img/git.png" alt="Git">
-                    <img class="acercaDe__logo acercaDe__logo-border" src="../img/nodejs.png" alt="Node.js">
-                    <img class="acercaDe__logo acercaDe__logo-border" src="../img/express.png" alt="Express">                    
-                    <img class="acercaDe__logo acercaDe__logo-border" src="../img/sql-server.png" alt="SQL Sercer">
+                <div class="main__logos">               
+                    <img class="main__logo" src="../img/html.png" alt="HTML">
+                    <img class="main__logo" src="../img/css.png" alt="CSS">
+                    <img class="main__logo" src="../img/javascript.png" alt="Javascript">
+                    <img class="main__logo" src="../img/github.ico" alt="Github">
+                    <img class="main__logo" src="../img/git.png" alt="Git">
+                    <img class="main__logo main__logo-border" src="../img/nodejs.png" alt="Node.js">
+                    <img class="main__logo main__logo-border" src="../img/express.png" alt="Express">                    
+                    <img class="main__logo main__logo-border" src="../img/sql-server.png" alt="SQL Sercer">
                 </div>
             </div>            
         </div>
     </main>
 
+
+    <!-- SECTION  - Crear Cliente -->
+    <section class="crearCliente">
+        <div class="crearCliente__contenedor">
+            <div class="crearCliente__display">
+                <h3 class="crearCliente__heading">Crear Cliente</h3>
+                <form action="" method="" class="crearCliente__formulario">
+                    <fieldset>
+                        <label for="cedula" class="">Cedula:</label>
+                        <input class="crearCliente__input" type="number" name="cedula" id="cedula" placeholder="Ejemplo: 111111111">
+                        
+                        <label for="nombre" class="">Nombre:</label>
+                        <input class="crearCliente__input" type="text" name="nombre" id="nombre">
+
+                        <label for="primerApellido" class="">Primer Apellido:</label>
+                        <input class="crearCliente__input" type="text" name="primerApellido" id="primerApellido">
+                        
+                        <label for="segundoApellido" class="">Segundo Apellido:</label>
+                        <input class="crearCliente__input" type="text" name="segundoApellido" id="segundoApellido">
+                    </fieldset>
+
+                    <fieldset>                        
+                        <label for="telefono" class="">Teléfono:</label>
+                        <input class="crearCliente__input" type="number" name="telegono" id="telefono">
+
+                        <label for="email" class="">Email:</label>
+                        <input class="crearCliente__input" type="email" name="email" id="email">
+
+                        <label for="sexo" class="">Sexo:</label>
+                        <select class="crearCliente__input" name="sexo" id="sexo">
+                            <option value="">-- Seleccionar Sexo --</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                        
+                        <label for="estado" class="">Estado:</label>
+                        <select class="crearCliente__input" name="estado" id="estado">
+                            <option value="">-- Seleccionar Estado --</option>
+                            <option value="0">Inactivo</option>
+                            <option value="1">Activo</option>
+                        </select>
+                    </fieldset>                    
+                </form>
+                <button class="crearCliente__boton" type="submit">Crear Cliente</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION  - Tabla Clientes -->
+    <section class="tablaClientes">
+        <div class="tablaClientes__contenedor">
+            <div class="tablaClientes">
+                <h1>Tabla Clientes</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Quia corporis facilis deleniti expedita ipsam delectus quidem
+                    est. Dolore, ut eveniet pariatur quod voluptate placeat aut
+                    corporis similique expedita numquam assumenda.
+                </p>
+                <button>algo</button>
+                <button>algo</button>
+                <button>algo</button>
+            </div>
+        </div>
+    </section>
+
+
     <!-- FOOTER -->
     <footer class="footer">
+        <h2 class="main__heading">Proyecto - Arquitectura de Sistemas Operativos</h2>
         <div class="footer__contenedor">
             <div class="footer__texto">
                 <div class="footer__organizacion">
