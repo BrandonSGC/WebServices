@@ -15,6 +15,7 @@ const config = {
   },
 };
 
+// Funcion para insertar los clientes.
 async function insertarCliente(cedula, nombre, primerApellido,
 segundoApellido, fechaNacimiento, telefono, email, sexo, estado) {
     try {
@@ -38,11 +39,23 @@ segundoApellido, fechaNacimiento, telefono, email, sexo, estado) {
     }
 }
 
-
+// Función para obtener los clientes.
+async function obtenerClientes() {
+    try {
+        await sql.connect(config);
+        const result = await sql.query('SELECT * FROM Cliente');
+        return result.recordset;
+    } catch (error) {
+        throw error;
+    } finally {
+        sql.close();
+    }
+}
 
 
 
 // Exportamos las funciones.
 module.exports = {
-    insertarCliente
+    insertarCliente,
+    obtenerClientes,
 };
