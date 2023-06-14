@@ -50,7 +50,8 @@ app.post('/crearCliente', async (req, res) => {
         const estado = req.body.estado === "0" ? false : true;
 
         await insertarCliente(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);
-        res.send(`Datos guardados exitósamente.`);
+        //res.send(`Datos guardados exitósamente.`);
+        res.json({ success: true });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al guardar los datos.');

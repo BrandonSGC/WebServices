@@ -54,10 +54,10 @@
         <div class="crearCliente__contenedor">
             <div class="crearCliente__display">
                 <h3 class="crearCliente__heading">Crear Cliente</h3>
-                <form action="/crearCliente" method="post" class="crearCliente__formulario">
+                <form action="/crearCliente" method="post" class="crearCliente__formulario" id="formularioClientes">
                     <fieldset>
                         <label for="cedula">Cedula:</label>
-                        <input class="crearCliente__input" type="number" name="cedula" id="cedula" oninput="formatCedula(this)">
+                        <input class="crearCliente__input" type="number" name="cedula" id="cedula">
                         
                         <label for="nombre">Nombre:</label>
                         <input class="crearCliente__input" type="text" name="nombre" id="nombre">
@@ -90,10 +90,10 @@
                         <select class="crearCliente__input" name="estado" id="estado">
                             <option value="0">Inactivo</option>
                         </select>
-                        <button class="crearCliente__boton" type="submit">Crear Cliente</button>
+                        <button id="btnCrearCliente" class="crearCliente__boton" type="submit">Crear Cliente</button>
                     </fieldset>                    
                 </form>
-                
+                <!-- Aqui salen las alertas del formulario -->
             </div>
         </div>
     </section>
@@ -102,7 +102,7 @@
     <!-- SECTION  - Tabla Clientes -->
     <section class="tablaClientes">
         <div class="tablaClientes__contenedor">
-            <div class="tablaClientes">
+            <div class="tablaClientes__display">
                 <h1 class="tablaClientes__heading">Tabla Clientes</h1>
                 
                 <!-- Se define una tabla con la etiqueta table. -->
@@ -123,7 +123,7 @@
                     </thead>
                     <!-- tbody es donde vamos a poner los datos -->
                     <tbody class="tabla__datos">
-                        <script src="../js/clientes.js"></script>
+                        
                     </tbody>
                 </table>
             </div>
@@ -137,7 +137,7 @@
         <div class="footer__contenedor">
             <div class="footer__texto">
                 <div class="footer__organizacion">
-                    <h4>Organizacion:</h4>
+                    <h4>Universidad:</h4>
                     <div class="footer__imagen">
                         <img class="footer__logo" src="../img/CUC.png" alt="">
                     </div>
@@ -167,5 +167,6 @@
             </div>            
         </div>
     </footer>
+    <script src="../js/clientes.js"></script>    
 </body>
 </html>
