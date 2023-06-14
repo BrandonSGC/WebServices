@@ -1,5 +1,5 @@
 // Este archivo vamos a tener la configuración de la base de datos 
-// y la lógica relacionada.
+// de SQL Server y la lógica relacionada.
 
 const sql = require('mssql');
 

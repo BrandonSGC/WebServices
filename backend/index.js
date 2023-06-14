@@ -6,8 +6,15 @@ const app = express();
 // Constante del Puerto a utilizar.
 const PUERTO = 3000;
 
-const { insertarClienteSQLServer } = require('./databaseSQLServer.js')
-const { obtenerClientesSQLServer } = require('./databaseSQLServer.js')
+// Funciones de Insertar/Obtener datos de SQL Server.
+const { insertarClienteSQLServer } = require('./databaseSQLServer.js');
+const { obtenerClientesSQLServer } = require('./databaseSQLServer.js');
+
+// Funciones de Insertar/Obtener datos de MySQL.
+//const { conectar } = require('./databaseMySQL.js');
+const { insertarClienteMySQL } = require('./databaseMySQL.js');
+
+
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -37,20 +44,19 @@ app.post('/crearCliente', async (req, res) => {
         const nombre = req.body.nombre
         const primerApellido = req.body.primerApellido
         const segundoApellido = req.body.segundoApellido        
-        // Accedemos a los datos enviados desde el formulario
-        // mediante el atributo name de los inputs.
         const fechaString = req.body.fechaNacimiento;
-        // Obtener los componentes de la fecha
         const [year, month, day] = fechaString.split("-")
-        // Crear un objeto Date válido para SQL Server
         const fecha = new Date(year, month - 1, day);
         const telefono = req.body.telefono;    
         const email = req.body.email;
         const sexo = req.body.sexo;
         const estado = req.body.estado === "0" ? false : true;
 
-        console.log(cedula);
-        await insertarClienteSQLServer(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);
+        // Insertar datos en SQL Server.
+        await insertarClienteSQLServer(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);        
+        // Insertar datos en MySQL.
+        await insertarClienteMySQL(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);
+        
         res.send(`Datos guardados exitósamente.`);
         
     } catch (error) {
