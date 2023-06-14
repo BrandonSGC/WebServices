@@ -124,5 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Detenemos el envío del formulario si hay campos vacíos.
             return;
         }
+            // Envía el formulario si todos los campos están completos.
+            formularioClientes.submit();
+            
+            // Restablecemos el formulario después del envío.
+            formularioClientes.reset();
     }
 });

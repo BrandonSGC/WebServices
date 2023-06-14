@@ -6,8 +6,8 @@ const app = express();
 // Constante del Puerto a utilizar.
 const PUERTO = 3000;
 
-const { insertarCliente } = require('./database.js')
-const { obtenerClientes } = require('./database.js')
+const { insertarClienteSQLServer } = require('./databaseSQLServer.js')
+const { obtenerClientesSQLServer } = require('./databaseSQLServer.js')
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -49,9 +49,10 @@ app.post('/crearCliente', async (req, res) => {
         const sexo = req.body.sexo;
         const estado = req.body.estado === "0" ? false : true;
 
-        await insertarCliente(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);
-        //res.send(`Datos guardados exitósamente.`);
-        res.json({ success: true });
+        console.log(cedula);
+        await insertarClienteSQLServer(cedula, nombre, primerApellido, segundoApellido, fecha, telefono, email, sexo, estado);
+        res.send(`Datos guardados exitósamente.`);
+        
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al guardar los datos.');
@@ -61,7 +62,7 @@ app.post('/crearCliente', async (req, res) => {
 app.get('/obtenerClientes', async (req, res) => {  
     try {
         // Obtenemos los datos de los bancos
-        const clientes = await obtenerClientes();     
+        const clientes = await obtenerClientesSQLServer();     
         // Enviamos el array de objetos en JSON.
         res.json(clientes);
     } catch (error) {

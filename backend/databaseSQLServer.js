@@ -16,7 +16,7 @@ const config = {
 };
 
 // Funcion para insertar los clientes.
-async function insertarCliente(cedula, nombre, primerApellido,
+async function insertarClienteSQLServer(cedula, nombre, primerApellido,
 segundoApellido, fechaNacimiento, telefono, email, sexo, estado) {
     try {
         // Creamos el pool
@@ -40,7 +40,7 @@ segundoApellido, fechaNacimiento, telefono, email, sexo, estado) {
 }
 
 // Función para obtener los clientes.
-async function obtenerClientes() {
+async function obtenerClientesSQLServer() {
     try {
         await sql.connect(config);
         const result = await sql.query('SELECT * FROM Cliente');
@@ -53,9 +53,8 @@ async function obtenerClientes() {
 }
 
 
-
 // Exportamos las funciones.
 module.exports = {
-    insertarCliente,
-    obtenerClientes,
+    insertarClienteSQLServer,
+    obtenerClientesSQLServer,
 };
