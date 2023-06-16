@@ -11,7 +11,6 @@ const { insertarClienteSQLServer } = require('./databaseSQLServer.js');
 const { obtenerClientesSQLServer } = require('./databaseSQLServer.js');
 
 // Funciones de Insertar/Obtener datos de MySQL.
-//const { conectar } = require('./databaseMySQL.js');
 const { insertarClienteMySQL } = require('./databaseMySQL.js');
 
 
@@ -67,8 +66,12 @@ app.post('/crearCliente', async (req, res) => {
 
 app.get('/obtenerClientes', async (req, res) => {  
     try {
-        // Obtenemos los datos de los bancos
-        const clientes = await obtenerClientesSQLServer();     
+        // Obtenemos los datos de los Clientes.
+        const clientes = await obtenerClientesSQLServer();
+
+
+        
+        
         // Enviamos el array de objetos en JSON.
         res.json(clientes);
     } catch (error) {
